@@ -12,7 +12,8 @@ import CoreData
 class ViewController: UITableViewController {
     
     var container: NSPersistentContainer!
-
+    var commits = [Commit]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +26,26 @@ class ViewController: UITableViewController {
         }
         
         performSelector(inBackground: #selector(fetchCommits), with: nil)
+        
+        loadSavedData()
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commits.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Commit", for: indexPath)
+        
+        let commit = commits[indexPath.row]
+        cell.textLabel!.text = commit.date.description
+        cell.detailTextLabel!.text = commit.message.description
+        
+        return cell
     }
     
     func saveContext() {
@@ -51,6 +72,7 @@ class ViewController: UITableViewController {
                     self.configure(commit: commit, usingJSON: jsonCommit)
                 }
                 self.saveContext()
+                self.loadSavedData()
             }
         }
     }
@@ -64,11 +86,19 @@ class ViewController: UITableViewController {
         commit.date = formatter.date(from: json["commit"]["committer"]["date"].stringValue) ?? Date()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadSavedData() {
+        let request = Commit.createFetchRequest()
+        let sort = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sort]
+        
+        do {
+            commits = try container.viewContext.fetch(request)
+            print("Got \(commits.count) commits.")
+            tableView.reloadData()
+        } catch {
+            print("Fetch failed")
+        }
     }
-
 
 }
 
