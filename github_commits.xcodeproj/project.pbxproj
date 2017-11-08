@@ -16,7 +16,9 @@
 		73E51B4B1FB2D7170015EF27 /* github_commitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E51B4A1FB2D7170015EF27 /* github_commitsUITests.swift */; };
 		73E51B591FB2D79E0015EF27 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E51B581FB2D79D0015EF27 /* SwiftyJSON.swift */; };
 		73E51B5D1FB2D9BA0015EF27 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E51B5C1FB2D9BA0015EF27 /* DetailViewController.swift */; };
-		73E51B601FB2DBE30015EF27 /* github_commits.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73E51B5E1FB2DBE30015EF27 /* github_commits.xcdatamodeld */; };
+		73E51B621FB2E88F0015EF27 /* github_commits.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73E51B5E1FB2DBE30015EF27 /* github_commits.xcdatamodeld */; };
+		73E51B651FB2E9FC0015EF27 /* Commit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E51B631FB2E9FC0015EF27 /* Commit+CoreDataClass.swift */; };
+		73E51B661FB2E9FC0015EF27 /* Commit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E51B641FB2E9FC0015EF27 /* Commit+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		73E51B581FB2D79D0015EF27 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		73E51B5C1FB2D9BA0015EF27 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		73E51B5F1FB2DBE30015EF27 /* github_commits.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = github_commits.xcdatamodel; sourceTree = "<group>"; };
+		73E51B631FB2E9FC0015EF27 /* Commit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		73E51B641FB2E9FC0015EF27 /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 		73E51B291FB2D7160015EF27 /* github_commits */ = {
 			isa = PBXGroup;
 			children = (
+				73E51B631FB2E9FC0015EF27 /* Commit+CoreDataClass.swift */,
+				73E51B641FB2E9FC0015EF27 /* Commit+CoreDataProperties.swift */,
 				73E51B2A1FB2D7160015EF27 /* AppDelegate.swift */,
 				73E51B2C1FB2D7160015EF27 /* ViewController.swift */,
 				73E51B5C1FB2D9BA0015EF27 /* DetailViewController.swift */,
@@ -268,10 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73E51B651FB2E9FC0015EF27 /* Commit+CoreDataClass.swift in Sources */,
 				73E51B591FB2D79E0015EF27 /* SwiftyJSON.swift in Sources */,
+				73E51B661FB2E9FC0015EF27 /* Commit+CoreDataProperties.swift in Sources */,
 				73E51B5D1FB2D9BA0015EF27 /* DetailViewController.swift in Sources */,
 				73E51B2D1FB2D7160015EF27 /* ViewController.swift in Sources */,
-				73E51B601FB2DBE30015EF27 /* github_commits.xcdatamodeld in Sources */,
+				73E51B621FB2E88F0015EF27 /* github_commits.xcdatamodeld in Sources */,
 				73E51B2B1FB2D7160015EF27 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
