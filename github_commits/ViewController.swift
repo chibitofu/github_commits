@@ -20,6 +20,8 @@ class ViewController: UITableViewController {
         container = NSPersistentContainer(name: "github_commits")
         
         container.loadPersistentStores { storeDescription, error in
+            self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+            
             if let error = error {
                 print("unresolved error \(error)")
             }
